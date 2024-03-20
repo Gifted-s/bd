@@ -64,7 +64,6 @@ impl StorageEngine<Vec<u8>> {
     pub async fn new(dir: PathBuf) -> Result<Self, StorageEngineError> {
         let dir = DirPath::build(dir);
         let default_config = Config::default();
-
         StorageEngine::with_default_capacity_and_config(
             dir.clone(),
             SizeUnit::Bytes,
